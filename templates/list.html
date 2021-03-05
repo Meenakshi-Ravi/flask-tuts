@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+            
+            table {
+              width: 100%;
+            }
+            </style>
+    </head>
+    <body>
+    
+
+        <table style="width:100%">
+            <tr>
+                <th> Emailid </th>
+                <th> Password </th>
+                <th> Name </th>
+                <th> Usertype </th>
+                <th> DateOfBirth </th>
+                <th> Qualification </th>
+                <th> State </th>
+                <th> Postal Code</th>
+                <th> Experience </th>
+                {% if emptype == "admin" %}
+                    <th> Action</th>
+                    <th> Delete</th>
+                    <th> Message</th>
+                {% endif %}
+                    
+            </tr>
+            {% for row in data: %}
+            <tr>
+                <td>{{ row.emailid }}</td>
+                <td>{{ row.password }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.usertype }}</td>
+                <td>{{ row.dateofbirth }}</td>
+                <td>{{ row.qualification }}</td>
+                <td>{{ row.state }}</td>
+                <td>{{ row.postalcode }}</td>
+                <td>{{ row.experience }}</td>
+                {% if emptype == "admin" %}
+                    <td><a href="{{ url_for('update', email=row.emailid) }}">Update</a></td>
+                    <td><a href="{{ url_for('delete', id=row.id) }}"> Delete</a></td>
+                    <td><a href="{{ url_for('send_message', email=row.emailid) }}"> Mail</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            <p class="bottom"><a class="bottom" href="{{ url_for('logout') }}"> Log Out</a></p>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <form action="{{ url_for('send_message')}}" method="post">
+            <input type="email" name="emailid" id="email" placeholder="Email" required id= ""/>
+		    <br>
+            <textarea name="message" id = "" cols= "30" placeholder="Messege Body" required rows= "10"></textarea>
+		    <br>
+            <input type="submit" value="Send messege"/>
+        </form>
+        
+    </body>
+</html>

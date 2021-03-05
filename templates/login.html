@@ -1,0 +1,21 @@
+<html>
+<head><link rel="stylesheet" href="main.css"></head>
+<body>
+    <h1 style="text-align:center;"></h1>
+    <div class="box">
+        <h1>Log In</h1>
+        <p>{{ msg }}</p>
+        <form action="/login" method="post">
+            <input type="text" name="emailid" id="emailid" placeholder="Emailid" required/>
+		    <br>
+            <input type="password" name="password" id="password" placeholder="Password" required/>
+		    <br>
+            <input type="submit" class="button" value="Log In"/>
+        </form>
+        <p class="bottom"><a class="bottom" href="{{url_for('register')}}"> Register here</a></p>
+        
+    </div>
+    </body>
+</html>
+
+       

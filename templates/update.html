@@ -1,0 +1,33 @@
+<html>
+<head><link rel="stylesheet" href="style.css">
+</head>
+    <body>
+      <h1 style="text-align:center;"></h1>
+    	<div class="box">
+  			<h1>Update</h1>
+              
+			  <form action="{{ url_for('updatedetails') }}" method="post">
+                <input type="text" name="emailid" id="emailid" placeholder="Emailid" value="{{ data.emailid}}" required />
+    			<br>
+                <input type="password" name="password" id="password" placeholder="Password" value="{{ data.password}}" required/>
+    			<br>
+                <input type="text" name="name" id="name" placeholder="Name" value="{{ data.name}}"required/>
+    			<br>
+				<input type="text" name="usertype" id="usertype" placeholder="Usertype" value="{{ data.usertype}}" required/>
+    			<br>
+                <input type="date" name="dateofbirth" placeholder="dd-mm-yyyy"  min="1960-01-01" max="2030-12-31" value="{{ data.dateofbirth}}">
+                <br>
+    			<input type="text" name="qualification" id="qualification" placeholder="Qualification" value="{{ data.qualification}}" required/>
+    			<br>
+                <input type="text" name="state" id="state" placeholder="State" value="{{ data.state}}" required/>
+    			<br>
+                <input type="number" name="postalcode" id="pc" placeholder="Postal code" value="{{ data.postalcode}}" required/>
+    			<br>
+                <input type="number" name="experience" id="experience" placeholder="Experience" value="{{ data.experience}}" required/>
+    			<br>
+    			<input type="submit" class="button" value="Update"/>
+  			</form>
+		</div>
+		<p class="bottom"><a class="bottom" href="{{ url_for('login') }}"> Log In</a></p>
+	</body>
+</html>

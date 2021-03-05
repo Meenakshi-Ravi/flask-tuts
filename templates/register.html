@@ -1,0 +1,33 @@
+<html>
+<head><link rel="stylesheet" href="style.css">
+</head>
+    <body>
+      <h1 style="text-align:center;"></h1>
+    	<div class="box">
+  			<h1>Register</h1>
+			  <form action="{{ url_for('register') }}" method="post">
+			  <div class="msg">{{ msg }}</div>
+                <input type="text" name="emailid" id="emailid" placeholder="Emailid" required />
+    			<br>
+                <input type="password" name="password" id="password" placeholder="Password" required/>
+    			<br>
+                <input type="text" name="name" id="name" placeholder="Name" required/>
+    			<br>
+				<input type="text" name="usertype" id="usertype" placeholder="Usertype" required/>
+    			<br>
+                <input type="date" name="dateofbirth" placeholder="dd-mm-yyyy" value="" min="1960-01-01" max="2030-12-31" required/>
+                <br>
+    			<input type="text" name="qualification" id="qualification" placeholder="Qualification" required/>
+    			<br>
+                <input type="text" name="state" id="state" placeholder="State" required/>
+    			<br>
+                <input type="number" name="postalcode" id="pc" placeholder="Postal code" required/>
+    			<br>
+                <input type="number" name="experience" id="experience" placeholder="Experience" required/>
+    			<br>
+    			<input type="submit" class="button" value="Register"/>
+  			</form>
+		</div>
+		<p class="bottom"><a class="bottom" href="{{ url_for('home') }}"> Back</a></p>
+	</body>
+</html>
